@@ -1,0 +1,29 @@
+{
+    "name": "yarcode/yii2-base",
+    "description": "Useful Yii2 base components",
+    "license": "MIT",
+	"type": "yii2-extension",
+	"keywords": ["yii2"],
+    "authors": [
+        {
+            "name": "Alexey Samoylov",
+            "email": "alexey.samoylov@gmail.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Valentin Konusov",
+            "email": "rlng-krsk@yandex.ru",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php":">=5.4.0",
+	"yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "yarcode\\base\\": "./src"
+        }
+    }
+}
