@@ -19,7 +19,7 @@ trait TypeTrait
      * @param null $default
      * @return string|null
      */
-    public function getStatusLabel($default = null)
+    public function getTypeLabel($default = null)
     {
         return ArrayHelper::getValue(static::getTypeLabels(), $this->type, $default);
     }
