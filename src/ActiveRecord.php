@@ -1,7 +1,7 @@
 <?php
 namespace yarcode\base;
 
-use yarcode\helpers\DateTimeHelper;
+use yarcode\base\helpers\DateTimeHelper;
 use yii\helpers\VarDumper;
 
 /**
