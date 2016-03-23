@@ -15,7 +15,7 @@ namespace yarcode\base\traits;
  * where {methodName} like actionProcessOne
  *
  */
-trait LoopTrait
+trait SpoolTrait
 {
     public function actionSpool($methodName, $loopLimit = 1000, $chunkSize = 50)
     {
