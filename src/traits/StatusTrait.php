@@ -8,7 +8,7 @@ use yii\helpers\ArrayHelper;
  * Trait for default status column
  *
  * Class StatusTrait
- * @package common\traits
+ * @package yarcode\base\traits
  *
  * @property int $status
  * @property string|null $statusLabel
