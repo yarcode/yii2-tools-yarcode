@@ -10,11 +10,12 @@ class DateTimeHelper extends Component
     const FORMAT_SQL_TIME = 'H:i:s';
 
     /**
+     * @deprecated use yarcode\base\helpers\TimeZoneHelper::getUtc()
      * @return \DateTimeZone
      */
     public static function getUtc()
     {
-        return new \DateTimeZone('UTC');
+        return TimeZoneHelper::getUtc();
     }
 
     /**
@@ -24,9 +25,11 @@ class DateTimeHelper extends Component
     public static function getNow(\DateTimeZone $tz = null)
     {
         $result = new \DateTime('now');
+
         if (isset($tz)) {
             $result->setTimezone($tz);
         }
+
         return $result;
     }
 }
