@@ -5,9 +5,6 @@ use yii\db\Expression;
 
 class TimestampBehavior extends \yii\behaviors\TimestampBehavior
 {
-    public $createdAtAttribute = 'createdAt';
-    public $updatedAtAttribute = 'updatedAt';
-
     public function init()
     {
         parent::init();
