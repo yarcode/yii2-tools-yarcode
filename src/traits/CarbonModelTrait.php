@@ -2,20 +2,22 @@
 /**
  * @author Alexey Samoylov <alexey.samoylov@gmail.com>
  */
-namespace yarcode\base\traits;
+
+namespace YarCode\Yii2\Traits;
 
 use Carbon\Carbon;
 use yii\base\Model;
 
 /**
  * Class CarbonModelTrait
- * @package common\components\traits
+ * @package YarCode\Yii2\Traits
  *
  * @mixin Model
  */
 trait CarbonModelTrait
 {
     /**
+     * Returns attribute value as a Carbon instance
      * @param $attribute
      * @return Carbon
      */
@@ -28,8 +30,7 @@ trait CarbonModelTrait
             }
             if (is_numeric($value)) {
                 return Carbon::createFromTimestamp($value);
-            }
-            elseif (preg_match('/^(\d{4})-(\d{2})-(\d{2})$/', $value)) {
+            } elseif (preg_match('/^(\d{4})-(\d{2})-(\d{2})$/', $value)) {
                 return Carbon::createFromFormat('Y-m-d', $value)->startOfDay();
             } else {
                 return Carbon::createFromFormat($this->getCarbonFormat($attribute), $value);
@@ -37,6 +38,11 @@ trait CarbonModelTrait
         }
     }
 
+    /**
+     * Returns datetime format for a specified attribute
+     * @param string $attribute
+     * @return string
+     */
     public function getCarbonFormat($attribute)
     {
         return 'Y-m-d H:i:s';

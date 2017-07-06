@@ -1,5 +1,6 @@
 <?php
-namespace yarcode\base\traits;
+
+namespace YarCode\Yii2\Traits;
 
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
@@ -8,12 +9,11 @@ use yii\helpers\ArrayHelper;
  * Trait for default type column
  *
  * Class StatusTrait
- * @package yarcode\base\traits
+ * @package YarCode\Yii2\Traits
  *
- * @property int $type
  * @property string|null $typeLabel
  */
-trait TypeTrait
+trait TypeLabelTrait
 {
     /**
      * @param null $default
@@ -21,7 +21,7 @@ trait TypeTrait
      */
     public function getTypeLabel($default = null)
     {
-        return ArrayHelper::getValue(static::getTypeLabels(), $this->type, $default);
+        return ArrayHelper::getValue(static::getTypeLabels(), static::getTypeAttributeName(), $default);
     }
 
     /**
@@ -30,6 +30,14 @@ trait TypeTrait
      */
     public static function getTypeLabels()
     {
-        throw new InvalidConfigException('Please define static getTypeLabels() in your class ' . get_called_class());
+        throw new InvalidConfigException('Please override ' . __METHOD__);
+    }
+
+    /**
+     * @return string
+     */
+    public static function getTypeAttributeName()
+    {
+        return 'type';
     }
 }

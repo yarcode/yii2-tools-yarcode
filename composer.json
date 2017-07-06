@@ -1,6 +1,6 @@
 {
-    "name": "yarcode/yii2-base",
-    "description": "Useful Yii2 base components",
+    "name": "yarcode/yii2-tools-yarcode",
+    "description": "Useful Yii2 components",
     "license": "MIT",
 	"type": "yii2-extension",
 	"keywords": ["yii2"],
@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "yarcode\\base\\": "./src"
+            "YarCode\\Yii2\\": "./src"
         }
     }
 }

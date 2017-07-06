@@ -1,5 +1,6 @@
 <?php
-namespace yarcode\base\traits;
+
+namespace YarCode\Yii2\Traits;
 
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
@@ -8,12 +9,11 @@ use yii\helpers\ArrayHelper;
  * Trait for default status column
  *
  * Class StatusTrait
- * @package yarcode\base\traits
+ * @package YarCode\Yii2\Traits
  *
- * @property int $status
  * @property string|null $statusLabel
  */
-trait StatusTrait
+trait StatusLabelTrait
 {
     /**
      * @param null $default
@@ -21,7 +21,7 @@ trait StatusTrait
      */
     public function getStatusLabel($default = null)
     {
-        return ArrayHelper::getValue(static::getStatusLabels(), $this->status, $default);
+        return ArrayHelper::getValue(static::getStatusLabels(), static::getStatusAttributeName(), $default);
     }
 
     /**
@@ -30,6 +30,14 @@ trait StatusTrait
      */
     public static function getStatusLabels()
     {
-        throw new InvalidConfigException('Please define static getStatusLabels() in your class ' . get_called_class());
+        throw new InvalidConfigException('Please override ' . __METHOD__);
+    }
+
+    /**
+     * @return string
+     */
+    public static function getStatusAttributeName()
+    {
+        return 'status';
     }
 }

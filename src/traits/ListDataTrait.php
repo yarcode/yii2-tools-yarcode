@@ -2,14 +2,14 @@
 /**
  * @author Alexey Samoylov <alexey.samoylov@gmail.com>
  */
-namespace yarcode\base\traits;
+namespace YarCode\Yii2\Traits;
 
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 
 /**
  * Class ListDataTrait
- * @package yarcode\base\traits
+ * @package YarCode\Yii2\Traits
  *
  * @mixin ActiveRecord
  */

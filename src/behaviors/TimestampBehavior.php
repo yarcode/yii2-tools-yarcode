@@ -1,5 +1,5 @@
 <?php
-namespace yarcode\base\behaviors;
+namespace YarCode\Yii2\Behaviors;
 
 use yii\db\Expression;
 
