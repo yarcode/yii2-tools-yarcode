@@ -19,8 +19,8 @@
     "minimum-stability": "dev",
     "require": {
         "php":">=5.4.0",
-        "yiisoft/yii2": "*",
-        "nesbot/carbon": "*"
+        "yiisoft/yii2": "^2",
+        "nesbot/carbon": "^1.9"
     },
     "autoload": {
         "psr-4": {
