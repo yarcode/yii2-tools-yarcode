@@ -20,8 +20,6 @@ cache:
 install:
   - travis_retry composer self-update && composer --version
   - travis_retry composer update --prefer-dist --no-interaction
-# setup application:
-
 
 before_script:
   - mysql -e 'CREATE DATABASE yarcode_test;'
