@@ -9,9 +9,6 @@ php:
 # faster builds on new travis setup not using sudo
 sudo: false
 
-env:
-  - DB_USERNAME=travis
-
 # cache vendor dirs
 cache:
   directories:
@@ -20,9 +17,6 @@ cache:
 install:
   - travis_retry composer self-update && composer --version
   - travis_retry composer update --prefer-dist --no-interaction
-
-before_script:
-  - mysql -e 'CREATE DATABASE yarcode_test;'
 
 script:
   - composer validate --strict
