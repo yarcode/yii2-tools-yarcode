@@ -23,8 +23,6 @@ install:
 # setup application:
   - |
     ./init --env=Development
-    sed -i "s/'cookieValidationKey' => ''/'cookieValidationKey' => 'testkey'/" frontend/config/main.php
-    sed -i "s/'cookieValidationKey' => ''/'cookieValidationKey' => 'testkey'/" backend/config/main.php
 
 before_script:
   - mysql -e 'CREATE DATABASE yarcode_test;'
