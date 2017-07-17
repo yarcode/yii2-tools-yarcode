@@ -21,8 +21,7 @@ install:
   - travis_retry composer self-update && composer --version
   - travis_retry composer update --prefer-dist --no-interaction
 # setup application:
-  - |
-    ./init --env=Development
+  - php init --env=Development
 
 before_script:
   - mysql -e 'CREATE DATABASE yarcode_test;'
