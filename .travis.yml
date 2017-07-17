@@ -9,11 +9,6 @@ php:
 # faster builds on new travis setup not using sudo
 sudo: false
 
-services:
-  - memcached
-  - mysql
-  - redis-server
-
 env:
   - DB_USERNAME=travis
 
@@ -21,9 +16,6 @@ env:
 cache:
   directories:
     - $HOME/.composer/cache
-
-before_install:
-  - curl -O https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.0/elasticsearch-2.3.0.deb && sudo dpkg -i --force-confnew elasticsearch-2.3.0.deb && sudo service elasticsearch restart
 
 install:
   - travis_retry composer self-update && composer --version
