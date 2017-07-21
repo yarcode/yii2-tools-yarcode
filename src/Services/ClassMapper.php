@@ -5,7 +5,7 @@
 
 namespace YarCode\Yii2\Services;
 
-class ClassMapperService
+class ClassMapper
 {
     /** @var string[] */
     protected $classMap = [];
