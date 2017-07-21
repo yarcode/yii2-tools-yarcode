@@ -25,7 +25,7 @@ class ClassMapper
      */
     public function setClassMap($classMap)
     {
-        $this->classMap = $classMap;
+        $this->classMap = array_merge($this->classMap, $classMap);
     }
 
     public function createObject($className)
