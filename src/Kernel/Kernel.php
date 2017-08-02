@@ -44,21 +44,23 @@ class Kernel extends Component implements BootstrapInterface
     }
 
     /**
-     * @param string $className
+     * @param string $config
      * @throws InvalidConfigException
      */
-    public function registerPlugin($className)
+    public function registerPlugin($config)
     {
-        if (!class_exists($className)) {
-            throw new \LogicException("Unknown plugin className {$className}");
+        $plugin = \Yii::createObject($config);
+
+        if (!$plugin instanceof KernelPlugin) {
+            throw new \LogicException("Wrong plugin configuration");
         }
+
+        $className = get_class($plugin);
 
         if (isset($this->plugins[$className])) {
             return;
         }
 
-        /** @var KernelPlugin $plugin */
-        $plugin = \Yii::createObject($className);
         $plugin->kernel = $this;
         $this->plugins[$className] = $plugin;
         $this->plugins[$className]->bootstrap();
